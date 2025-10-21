@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack Practice - Master Your Skills</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Blackjack Practice</h1>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">Balance:</span>
+                    <span class="stat-value" id="balance">$1000</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Wins:</span>
+                    <span class="stat-value" id="wins">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Losses:</span>
+                    <span class="stat-value" id="losses">0</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="game-area">
+            <!-- Dealer Section -->
+            <div class="dealer-section">
+                <h2>Dealer <span id="dealer-score" class="score"></span></h2>
+                <div id="dealer-cards" class="cards"></div>
+            </div>
+
+            <!-- Player Section -->
+            <div class="player-section">
+                <h2>You <span id="player-score" class="score"></span></h2>
+                <div id="player-cards" class="cards"></div>
+            </div>
+        </div>
+
+        <!-- Message Area -->
+        <div id="message" class="message"></div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <!-- Betting Controls -->
+            <div id="betting-controls" class="betting-controls">
+                <h3>Place Your Bet</h3>
+                <div class="bet-buttons">
+                    <button class="bet-btn" onclick="setBet(10)">$10</button>
+                    <button class="bet-btn" onclick="setBet(25)">$25</button>
+                    <button class="bet-btn" onclick="setBet(50)">$50</button>
+                    <button class="bet-btn" onclick="setBet(100)">$100</button>
+                </div>
+                <div class="custom-bet">
+                    <input type="number" id="custom-bet" min="1" placeholder="Custom amount">
+                    <button onclick="setCustomBet()">Bet</button>
+                </div>
+                <div class="current-bet">
+                    Current Bet: $<span id="current-bet">0</span>
+                </div>
+                <button class="btn btn-primary" onclick="startGame()">Deal Cards</button>
+            </div>
+
+            <!-- Game Controls -->
+            <div id="game-controls" class="game-controls" style="display: none;">
+                <button class="btn btn-success" onclick="hit()">Hit</button>
+                <button class="btn btn-warning" onclick="stand()">Stand</button>
+                <button class="btn btn-secondary" onclick="doubleDown()">Double Down</button>
+            </div>
+
+            <!-- New Round Button -->
+            <button id="new-round-btn" class="btn btn-primary" onclick="newRound()" style="display: none;">New Round</button>
+        </div>
+
+        <footer>
+            <p>Practice makes perfect! No real money involved.</p>
+        </footer>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

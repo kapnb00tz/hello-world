@@ -1,0 +1,331 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    background: rgba(255,255,255,0.1);
+    padding: 10px 20px;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+}
+
+.stat-label {
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.stat-value {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+.game-area {
+    background: rgba(0,0,0,0.3);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 20px;
+    min-height: 400px;
+    backdrop-filter: blur(10px);
+}
+
+.dealer-section,
+.player-section {
+    margin-bottom: 40px;
+}
+
+.dealer-section h2,
+.player-section h2 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.score {
+    color: #ffd700;
+    font-size: 1.3rem;
+}
+
+.cards {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    min-height: 120px;
+}
+
+.card {
+    width: 80px;
+    height: 112px;
+    background: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    animation: dealCard 0.3s ease-out;
+    position: relative;
+}
+
+.card.red {
+    color: #dc3545;
+}
+
+.card.black {
+    color: #000;
+}
+
+.card.hidden {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: transparent;
+}
+
+.card.hidden::before {
+    content: "🂠";
+    font-size: 3rem;
+    color: white;
+}
+
+.card-value {
+    font-size: 1.8rem;
+}
+
+.card-suit {
+    font-size: 1.5rem;
+}
+
+@keyframes dealCard {
+    from {
+        transform: translateY(-100px) rotateY(180deg);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) rotateY(0);
+        opacity: 1;
+    }
+}
+
+.message {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    min-height: 40px;
+    margin-bottom: 20px;
+    color: #ffd700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.message.win {
+    color: #28a745;
+}
+
+.message.lose {
+    color: #dc3545;
+}
+
+.message.push {
+    color: #ffc107;
+}
+
+.controls {
+    text-align: center;
+}
+
+.betting-controls h3 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.bet-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.bet-btn {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.bet-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.bet-btn:active {
+    transform: translateY(0);
+}
+
+.custom-bet {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.custom-bet input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ffd700;
+    border-radius: 8px;
+    width: 150px;
+    text-align: center;
+}
+
+.custom-bet button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    background: #ffd700;
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.current-bet {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #ffd700;
+    font-weight: bold;
+}
+
+.game-controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    min-width: 120px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);
+    color: white;
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .stats {
+        gap: 15px;
+    }
+
+    .game-area {
+        padding: 20px;
+    }
+
+    .card {
+        width: 60px;
+        height: 84px;
+        font-size: 1.2rem;
+    }
+
+    .card-value {
+        font-size: 1.4rem;
+    }
+
+    .card-suit {
+        font-size: 1.2rem;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 1rem;
+        min-width: 100px;
+    }
+}
